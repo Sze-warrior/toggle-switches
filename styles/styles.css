@@ -1,0 +1,73 @@
+html, body {
+  font-family: "helvetica", "Arial", "Time new roman";
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+main .container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: block;
+}
+main .intro {
+  padding-bottom: 30px;
+  font-size: 22px;
+  color: #4d4d4d;
+  text-align: center;
+  font-weight: 300;
+}
+
+.toggle-switch-container input[type=checkbox] {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  width: 6em;
+  height: 3em;
+  border-radius: 3em;
+  background-color: #eeeeee;
+  outline: none;
+  cursor: pointer;
+}
+.toggle-switch-container input[type=checkbox].toggle-switch {
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  position: relative;
+  display: block;
+  margin: 10px auto;
+}
+.toggle-switch-container input[type=checkbox].toggle-switch:checked {
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.toggle-switch-container input[type=checkbox].toggle-switch:active:after {
+  width: 1.5em;
+  height: 1.5em;
+  top: 8px;
+}
+.toggle-switch-container input[type=checkbox].toggle-switch:after {
+  content: "";
+  width: 2em;
+  height: 2em;
+  background-color: #CF000F;
+  border-radius: 3em;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.toggle-switch-container input[type=checkbox].toggle-switch:checked:after {
+  left: 35px;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  background-color: #00B16A;
+}

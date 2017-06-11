@@ -1,0 +1,57 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+
+.toggle-switch-container{
+
+	input[type=checkbox]{
+		appearance: none;
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		width: 6em;
+		height: 3em;
+		border-radius: 3em;
+		background-color: $font-base-gray-light;
+		outline: none;
+		cursor: pointer; 
+
+		&.toggle-switch{
+			@include transition();
+			position: relative;				
+			display: block;
+			margin: 10px auto;
+
+			&:checked{
+				@include transition();				
+			}
+
+			&:active:after{
+				width: 1.5em;
+				height: 1.5em;
+				top: 8px;				
+			}
+
+			&:after{
+				content: "";
+				width: 2em;
+				height: 2em;
+				background-color: $color-red;
+				border-radius: 3em;
+				position: absolute;
+				top: 5px;
+				left: 5px;
+				@include transition();				
+			}
+
+			&:checked:after{
+				left: 35px;
+				@include transition();	
+				background-color: $color-green;
+			
+			}
+
+		}
+
+	}
+
+
+}
