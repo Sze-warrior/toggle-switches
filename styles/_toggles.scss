@@ -2,56 +2,51 @@
 @import "_mixins.scss";
 
 .toggle-switch-container{
+	background-color: $font-base-gray-light;
+	width: 65px;
+    margin: 10px auto;
+    border-radius: 3em;
+    position: relative;
+    height: 30px;
 
-	input[type=checkbox]{
-		appearance: none;
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		width: 6em;
-		height: 3em;
-		border-radius: 3em;
-		background-color: $font-base-gray-light;
-		outline: none;
-		cursor: pointer; 
+	label.ball{
+		@include transition(0.2s);
+		position: absolute;
+		content: "";
+    	top: 5px;
+    	left: 5px;
+    	border-radius: 50%;
+    	height: 20px;
+    	width: 20px;
+    	background-color: $color-red;
 
-		&.toggle-switch{
-			@include transition();
-			position: relative;				
-			display: block;
-			margin: 10px auto;
-
-			&:checked{
-				@include transition();				
-			}
-
-			&:active:after{
-				width: 1.5em;
-				height: 1.5em;
-				top: 8px;				
-			}
-
-			&:after{
-				content: "";
-				width: 2em;
-				height: 2em;
-				background-color: $color-red;
-				border-radius: 3em;
-				position: absolute;
-				top: 5px;
-				left: 5px;
-				@include transition();				
-			}
-
-			&:checked:after{
-				left: 35px;
-				@include transition();	
-				background-color: $color-green;
-			
-			}
-
+		&:hover{
+			cursor: pointer;
 		}
-
 	}
 
+	input[type=checkbox]{
+		outline: none;
+		cursor: pointer; 
+		width: 65px;
+		height: 30px;
+    	margin: 0 auto;
+		@include transition(0.2s);
+		opacity: 0;
+		display: block;
+		margin: 0 auto;
 
+		&:active~label.ball{
+		}
+
+		&:checked{
+			@include transition(0.2s);
+		}
+
+		&:checked~label.ball{
+			@include transition(0.2s);			
+			left: 40px;
+		   	background-color: $color-green;
+		}
+	}
 }
