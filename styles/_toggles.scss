@@ -9,8 +9,9 @@
     position: relative;
     height: 30px;
 
-	label.ball{
+	.ball{
 		@include transition(0.2s);
+		@include innerShadows();
 		position: absolute;
 		content: "";
     	top: 5px;
@@ -37,6 +38,10 @@
 		margin: 0 auto;
 
 		&:active~label.ball{
+			top:7px;
+			@include transition(0.2s);
+			height: 16px;
+			width: 16px;
 		}
 
 		&:checked{

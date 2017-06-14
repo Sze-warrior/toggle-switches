@@ -19,18 +19,21 @@ main .intro {
 }
 
 .toggle-switch-container {
-  background-color: #eeeeee;
+  background-color: #f1f0f0;
   width: 65px;
   margin: 10px auto;
   border-radius: 3em;
   position: relative;
   height: 30px;
 }
-.toggle-switch-container label.ball {
+.toggle-switch-container .ball {
   -moz-transition: 0.2s;
   -o-transition: 0.2s;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  -moz-box-shadow: inset 0 0 5px #7f7f82;
+  -webkit-box-shadow: inset 0 0 5px #7f7f82;
+  box-shadow: inset 0 0 5px #7f7f82;
   position: absolute;
   content: "";
   top: 5px;
@@ -40,7 +43,7 @@ main .intro {
   width: 20px;
   background-color: #CF000F;
 }
-.toggle-switch-container label.ball:hover {
+.toggle-switch-container .ball:hover {
   cursor: pointer;
 }
 .toggle-switch-container input[type=checkbox] {
@@ -56,6 +59,15 @@ main .intro {
   opacity: 0;
   display: block;
   margin: 0 auto;
+}
+.toggle-switch-container input[type=checkbox]:active ~ label.ball {
+  top: 7px;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  height: 16px;
+  width: 16px;
 }
 .toggle-switch-container input[type=checkbox]:checked {
   -moz-transition: 0.2s;
